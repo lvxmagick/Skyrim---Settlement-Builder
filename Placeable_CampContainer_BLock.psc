@@ -1,0 +1,1 @@
+Scriptname Placeable_CampContainer_BLock extends _camp_placeableobjectbase  

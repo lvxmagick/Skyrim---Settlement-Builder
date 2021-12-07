@@ -1,0 +1,26 @@
+Scriptname Placeable_CreativeMode_Anvil extends ObjectReference  
+
+
+GlobalVariable Property CreativeMode Auto
+Actor Property PlayerRef Auto
+
+
+
+Event OnActivate(ObjectReference akActionRef)
+  CreativeMode.SetValue(1.0)
+  Utility.Wait(1.0)
+  RegisterForSingleUpdate(0.5)
+  
+  
+EndEvent
+ 
+Event OnUpdate()
+  if ( ! Game.IsLookingControlsEnabled() )
+    RegisterForSingleUpdate(0.5)
+    return
+  else 
+    CreativeMode.SetValue(0.0)
+          
+
+  endif
+EndEvent
