@@ -19,77 +19,106 @@ Bool Loaded
 Actor Property PlayerRef Auto
 
 Event OnLoad()
-	Loaded = True
-	If IsOptionState
-		GoToState(" IsOptionState")
-	Else
-		GoToState("PlaceItem")
-	EndIf
+    Loaded = True
+    If IsOptionState
+        GoToState(" IsOptionState")
+    Else
+        GoToState("PlaceItem")
+    EndIf
 EndEvent
 
 Event OnEquipped(Actor akActor)
-	If !Loaded
-		If IsOptionState
-			GoToState(" IsOptionState")
-		Else
-			GoToState("PlaceItem")
-		EndIf
-	EndIf
+    ; BELL: Early return avoids the annoying-to-read Nested IFs
+    If !Loaded
+        return
+    EndIf
+
+    If IsOptionState
+        GoToState(" IsOptionState")
+    Else
+        GoToState("PlaceItem")
+    EndIf
 EndEvent
 
 ;====================================================================================
 
-Function PosMenu(ObjectReference Object, Int iButton = -1,  Bool abMenu = True)
-	Utility.Wait(1.0)
-	Float PosX = Object.GetPositionX()
-	Float PosY = Object.GetPositionY()
-	While abMenu
-		iButton = Placeable_AdvBsmtDoorMsg.Show()
-		If iButton == 0						;Move Up
-			Object.SetPosition(PosX, PosY, Object.GetPositionZ() + 5.0)
-			Utility.Wait(1.0)
-		ElseIf iButton == 1					;Move Down
-			Object.SetPosition(PosX, PosY, Object.GetPositionZ() - 5.0)
-			Utility.Wait(1.0)
-		ElseIf iButton == 2					;Turn Left
-			Object.SetAngle(0.0, 0.0, Object.GetAngleZ() + 5.0)
-			Utility.Wait(1.0)
-		ElseIf iButton == 3					;Turn Right
-			Object.SetAngle(0.0, 0.0, Object.GetAngleZ() - 5.0)
-			Utility.Wait(1.0)
-		ElseIf iButton == 4					;Start Over
-			Object.Disable()
-			Object.Delete()
-			PlayerRef.AddItem(ObjectKit)
-			abMenu = False
-			GoToState("Dead")
-		ElseIf iButton == 5					;Exit
-			abMenu = False
-			GoToState("Dead")
-		EndIf
-	EndWhile
+; BELL: What a DRY new Function! (DRY = Don't Repeat Yourself)
+Function boolWait(Bool abDoWaits, Float afDuration)
+    If doWaits
+        boolWait(abDoWaits, afDuration)
+    EndIf
+EndFunction
+
+Function PosMenu(ObjectReference akObjectToMove, Bool abDoWaits = False)
+    boolWait(abDoWaits, 1.0)
+    Float PosX = akObjectToMove.GetPositionX()
+    Float PosY = akObjectToMove.GetPositionY()
+
+    Int iButton
+    Bool abMenu = True
+
+    While abMenu
+        iButton = Placeable_AdvBsmtDoorMsg.Show() ; 0 through 5
+
+        ; MOVEMENT
+        ; Move Up
+        If iButton == 0
+            akObjectToMove.SetPosition(PosX, PosY, akObjectToMove.GetPositionZ() + 5.0)
+            boolWait(abDoWaits, 1.0)
+        
+        ; Move Down
+        ElseIf iButton == 1
+            akObjectToMove.SetPosition(PosX, PosY, akObjectToMove.GetPositionZ() - 5.0)
+            boolWait(abDoWaits, 1.0)
+
+
+        ; ROTATION
+        ; Turn Left
+        ElseIf iButton == 2
+            akObjectToMove.SetAngle(0.0, 0.0, akObjectToMove.GetAngleZ() + 5.0)
+            boolWait(abDoWaits, 1.0)
+
+        ; Turn Right
+        ElseIf iButton == 3
+            akObjectToMove.SetAngle(0.0, 0.0, akObjectToMove.GetAngleZ() - 5.0)
+            boolWait(abDoWaits, 1.0)
+
+        ; START OVER
+        ElseIf iButton == 4
+            akObjectToMove.Disable()
+            akObjectToMove.Delete()
+            PlayerRef.AddItem(ObjectKit)
+            abMenu = False
+            GoToState("Disabled")
+
+        ; EXIT
+        ElseIf iButton == 5
+            abMenu = False
+            GoToState("Disabled")
+        EndIf
+    EndWhile
 EndFunction
 
 ;====================================================================================
 
 State IsOptionState
 
-	Event OnBeginState()
-		UseableObject = PlayerRef.PlaceAtMe(PlaceableObject)
-		UseableObject.MoveTo(PlayerRef, 100.0 * Math.Sin(PlayerRef.GetAngleZ()), 100.0 * Math.Cos(PlayerRef.GetAngleZ()), 0.0)
-		Float zOffset = UseableObject.GetHeadingAngle(PlayerRef)
-		UseableObject.SetAngle(0.0, 0.0, UseableObject.GetAngleZ() + zOffset)
-		If Loaded
-			Self.Disable()
-			Self.Delete()
-		Else
-			PlayerRef.RemoveItem(ObjectKit, 1, true)
-		EndIf
-		SoundFX.PlayAndWait(UseableObject)
-		SoundFX.PlayAndWait(UseableObject)
-		SoundFX.Play(UseableObject)
-		PosMenu(UseableObject)
-	EndEvent
+    Event OnBeginState()
+        UseableObject = PlayerRef.PlaceAtMe(PlaceableObject)
+        UseableObject.MoveTo(PlayerRef, 100.0 * Math.Sin(PlayerRef.GetAngleZ()), 100.0 * Math.Cos(PlayerRef.GetAngleZ()), 0.0)
+        Float zOffset = UseableObject.GetHeadingAngle(PlayerRef)
+        UseableObject.SetAngle(0.0, 0.0, UseableObject.GetAngleZ() + zOffset)
+        If Loaded
+            Self.Disable()
+            Self.Delete()
+        Else
+            PlayerRef.RemoveItem(ObjectKit, 1, True)
+        EndIf
+        SoundFX.PlayAndWait(UseableObject)
+        SoundFX.PlayAndWait(UseableObject)
+        SoundFX.Play(UseableObject)
+        PosMenu(UseableObject)
+    EndEvent
 
 EndState
 
@@ -97,23 +126,23 @@ EndState
 
 State PlaceItem
 
-	Event OnBeginState()
-		UseableObject = PlayerRef.PlaceAtMe(PlaceableObject)
-		UseableObject.MoveTo(PlayerRef, 100.0 * Math.Sin(PlayerRef.GetAngleZ()), 100.0 * Math.Cos(PlayerRef.GetAngleZ()), 60.0)
-		UseableObject.SetAngle(0.0, 0.0, UseableObject.GetAngleZ())
-		If Loaded
-			Self.Disable()
-			Self.Delete()
-		Else
-			PlayerRef.RemoveItem(ObjectKit, 1, true)
-		EndIf
-		SoundFX.Play(UseableObject)
-		PosMenu(UseableObject)
-	EndEvent
+    Event OnBeginState()
+        UseableObject = PlayerRef.PlaceAtMe(PlaceableObject)
+        UseableObject.MoveTo(PlayerRef, 100.0 * Math.Sin(PlayerRef.GetAngleZ()), 100.0 * Math.Cos(PlayerRef.GetAngleZ()), 60.0)
+        UseableObject.SetAngle(0.0, 0.0, UseableObject.GetAngleZ())
+        If Loaded
+            Self.Disable(True)
+            Self.Delete()
+        Else
+            PlayerRef.RemoveItem(ObjectKit, 1, True)
+        EndIf
+        SoundFX.Play(UseableObject)
+        PosMenu(UseableObject)
+    EndEvent
 
 EndState
 
 ;====================================================================================
 
-State Dead
+State Disabled
 EndState

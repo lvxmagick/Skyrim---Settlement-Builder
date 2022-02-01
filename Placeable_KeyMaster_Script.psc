@@ -16,37 +16,37 @@ String Property LOCKMESSAGE Auto
 
 Event OnEquipped(Actor akActor)
 
-	Int OpenState = Door01.GetOpenState()
+    Int OpenState = Door01.GetOpenState()
                                   Door02.GetOpenState()
                                   Door03.GetOpenState()
                                   Door04.GetOpenState()
 
        
 
-	If (OpenState == 1 || OpenState == 2)
+    If (OpenState == 1 || OpenState == 2)
 
-		debug.notification(LOCKMESSAGE)
-		Door01.Activate(Game.GetPlayer())
+        debug.notification(LOCKMESSAGE)
+        Door01.Activate(Game.GetPlayer())
              Door02.Activate(Game.GetPlayer())
              Door03.Activate(Game.GetPlayer())
              Door04.Activate(Game.GetPlayer())
 
-		Utility.Wait(1.5)
-		Door01.Lock()
+        Utility.Wait(1.5)
+        Door01.Lock()
              Door02.Lock()
              Door03.Lock()
              Door04.Lock()
 
 
-	Else
+    Else
 
-		debug.notification(LOCKMESSAGE)
-		Door01.Lock()
+        debug.notification(LOCKMESSAGE)
+        Door01.Lock()
              Door02.Lock()
              Door03.Lock()
              Door04.Lock()
 
 
-	EndIf
+    EndIf
 
 EndEvent

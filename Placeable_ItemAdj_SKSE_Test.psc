@@ -29,7 +29,7 @@ EndEvent
  
  
  
-Function Menu(int aiButton = 0)
+Function Menu(Int aiButton = 0)
  
     
       
@@ -52,7 +52,7 @@ Function Menu(int aiButton = 0)
       Rotate_Menu_SKSE()
      
       ElseIf aiButton == 5
-     self.Disable(true)
+     self.Disable(True)
      game.getPlayer().addItem(MiscObj)
      DeleteWhenAble()
      Delete()
@@ -70,7 +70,7 @@ Function Menu(int aiButton = 0)
  
  
  
-Function Z_Menu_SKSE (int aiButton = 0, bool abFadeIn = false)
+Function Z_Menu_SKSE (Int aiButton = 0, Bool abFadeIn = False)
  
  
  
@@ -125,12 +125,12 @@ Function Z_Menu_SKSE (int aiButton = 0, bool abFadeIn = false)
         PositionObject.Disable()
         Self.Enable()
         PositionObject.Delete()
-    Endif
+    EndIf
    EndFunction
  
 ;---------------------------------------------------------------------------------Function_Y_SKSE-------------------------------------
  
-Function Y_Menu_SKSE( int aiButton = 0, bool abFadeIn = false)
+Function Y_Menu_SKSE( Int aiButton = 0, Bool abFadeIn = False)
  
  
  aiButton =  Y_Ui_SKSE.show()
@@ -184,7 +184,7 @@ Function Y_Menu_SKSE( int aiButton = 0, bool abFadeIn = false)
         PositionObject.Disable()
         Self.Enable()
         PositionObject.Delete()
-    Endif
+    EndIf
     EndFunction
  
     
@@ -192,7 +192,7 @@ Function Y_Menu_SKSE( int aiButton = 0, bool abFadeIn = false)
  
  
  
-Function X_Menu_SKSE( int aiButton = 0, bool abFadeIn = false)
+Function X_Menu_SKSE( Int aiButton = 0, Bool abFadeIn = False)
 
  
  aiButton =  X_Ui_SKSE.show()
@@ -244,12 +244,12 @@ Function X_Menu_SKSE( int aiButton = 0, bool abFadeIn = false)
         Self.Enable()
         PositionObject.Delete()
     
-Endif
+EndIf
 EndFunction
  
 ;--------------------------------------------------------------------------------Rotate_SKSE------------------------------------------------------------------
  
-Function Rotate_Menu_SKSE( int aiButton = 0, bool abFadeOut = False)
+Function Rotate_Menu_SKSE( Int aiButton = 0, Bool abFadeOut = False)
 
 
 
@@ -311,7 +311,7 @@ Function Rotate_Menu_SKSE( int aiButton = 0, bool abFadeOut = False)
         Self.SetAngle(PositionObject.GetAngleX(), PositionObject.GetAngleY(), PositionObject.GetAngleZ())
         Self.Enable()
         PositionObject.Delete()
-    Endif
+    EndIf
 EndFunction
 
 
@@ -319,12 +319,12 @@ EndFunction
 ;-----------------------------------------------------------------------------------------------------------------Make Static--------------------------------------------------------------------------
 
 
-Function MenuUi_MakeStatic(int aiButton = 0) ;Make Static
+Function MenuUi_MakeStatic(Int aiButton = 0) ;Make Static
       aiButton = MenuUi_MakeStatic.show()
 
     If aiButton == 1
     DisableNoWait(True)
-    Self.Disable(true)
+    Self.Disable(True)
    Self.PlaceatMe(StaticDummy)       
     Self.DeleteWhenAble()
      Delete()

@@ -5,7 +5,7 @@ Actorbase Property Enemy Auto
 
 
 Event OnActivate(ObjectReference akActionRef)    ;Get Eggs From Albino Nest
-  int eggs = Self.GetItemCount(Game.Getform(0x04017719))
+  Int eggs = Self.GetItemCount(Game.Getform(0x04017719))
 
   If (eggs == 0)
     Debug.MessageBox("No more Albino Eggs at this time")
@@ -16,7 +16,7 @@ Else
 
 If (eggs == 3) ; Say Nothing Just Recieve Eggs
 
-int iRoll = Utility.RandomInt(0,15)
+Int iRoll = Utility.RandomInt(0,15)
 If iRoll == 12
 Debug.Notification("Oops the eggs hatched!!")
 

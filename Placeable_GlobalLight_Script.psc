@@ -9,7 +9,7 @@ Event OnInit()
 EndEvent
 
 Event OnUpdate()
-    If (IO_01.GetValue() as bool)
+    If (IO_01.GetValue() as Bool)
         Enable()
     Else
         Disable()

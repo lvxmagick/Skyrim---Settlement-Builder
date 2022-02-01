@@ -5,17 +5,17 @@ Actor Property PlayerRef Auto
 Event OnActivate(ObjectReference akActionRef)
 Self.SetOpen()
 Utility.Wait(0.5)
-if ( ! Game.IsLookingControlsEnabled() )
+If ( ! Game.IsLookingControlsEnabled() )
     RegisterForSingleUpdate(0.5)
     return
   else 
  Self.SetOpen(False)
-Endif
+EndIf
 EndEvent
 
 
 Event Oninit()
-if PlayerRef.IsSneaking()
+If PlayerRef.IsSneaking()
 self.BlockActivation()
 EndIf
 EndEvent

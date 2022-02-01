@@ -17,7 +17,7 @@ Event OnActivate(ObjectReference akActionRef)
    Menu()
 EndEvent
 
-Function Menu(int aiButton = 0)
+Function Menu(Int aiButton = 0)
       aiButton = MenuUi.show()
 
     If aiButton == 1
@@ -34,7 +34,7 @@ Function Menu(int aiButton = 0)
 
     ElseIf aiButton == 5
        DisableNoWait(True)
-       self.Disable(true)
+       self.Disable(True)
        game.getPlayer().addItem(MiscObj)
         DeleteWhenAble()
         Delete()
@@ -52,7 +52,7 @@ EndFunction
 
 
 
-Function Z_Menu(int aiButton = 0)
+Function Z_Menu(Int aiButton = 0)
       aiButton =  Z_Ui.show()
 
     If aiButton == 1
@@ -77,7 +77,7 @@ Function Z_Menu(int aiButton = 0)
 
 EndFunction
 
-Function Y_Menu(int aiButton = 0)
+Function Y_Menu(Int aiButton = 0)
       aiButton =  Y_Ui.show()
 
     If aiButton == 1
@@ -104,7 +104,7 @@ Function Y_Menu(int aiButton = 0)
 
 EndFunction
 
-Function X_Menu(int aiButton = 0)
+Function X_Menu(Int aiButton = 0)
       aiButton = X_Ui.show()
 
     If aiButton == 1
@@ -130,53 +130,53 @@ Function X_Menu(int aiButton = 0)
 
 EndFunction 
 
-Function Rotate_Menu(int aiButton = 0)
+Function Rotate_Menu(Int aiButton = 0)
       aiButton = Rotate_Ui.show()
      
     If aiButton == 1
            Self.SetAngle(0.0, 0.0, self.GetAngleZ() - 1.0)
-			Utility.Wait(1.0)    
+            Utility.Wait(1.0)    
      
      ElseIf aiButton == 2
            Self.SetAngle(0.0, 0.0, self.GetAngleZ() - 10.0)
-			Utility.Wait(1.0)    
+            Utility.Wait(1.0)    
      
         ElseIf aiButton == 3
            Self.SetAngle(0.0, 0.0, self.GetAngleZ() - 30.0)
-			Utility.Wait(1.0)    
+            Utility.Wait(1.0)    
                
              ElseIf aiButton == 4
            Self.SetAngle(0.0, 0.0, self.GetAngleZ() - 50.0)
-			Utility.Wait(1.0)    
+            Utility.Wait(1.0)    
  
     ElseIf aiButton == 5
            Self.SetAngle(0.0, 0.0, self.GetAngleZ() + 1.0)
-			Utility.Wait(1.0)    
+            Utility.Wait(1.0)    
  
     ElseIf aiButton == 6
            Self.SetAngle(0.0, 0.0, self.GetAngleZ() + 10.0)
-			Utility.Wait(1.0)    
+            Utility.Wait(1.0)    
      
      ElseIf aiButton == 7
            Self.SetAngle(0.0, 0.0, self.GetAngleZ() + 30.0)
-			Utility.Wait(1.0)    
+            Utility.Wait(1.0)    
 
         
      ElseIf aiButton == 8
            Self.SetAngle(0.0, 0.0, self.GetAngleZ() + 50.0)
-			Utility.Wait(1.0)    
+            Utility.Wait(1.0)    
 
 
           
 EndIf
 EndFunction
 
-Function MenuUi_MakeStatic(int aiButton = 0) ;Make Static
+Function MenuUi_MakeStatic(Int aiButton = 0) ;Make Static
       aiButton = MenuUi_MakeStatic.show()
 
     If aiButton == 1
     DisableNoWait(True)
-    Self.Disable(true)
+    Self.Disable(True)
    Self.PlaceatMe(StaticDummy)       
     Self.DeleteWhenAble()
      Delete()

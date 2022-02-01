@@ -15,7 +15,7 @@ Event OnActivate(ObjectReference akActionRef)
 EndEvent
  
 Event OnUpdate()
-  if ( ! Game.IsLookingControlsEnabled() )
+  If ( ! Game.IsLookingControlsEnabled() )
     RegisterForSingleUpdate(0.5)
     return
   Else 
@@ -26,5 +26,5 @@ EndEvent
 
 Function Cast()
 Placeable_CreativeMode_Catalouge_Spell.Cast( PlayerRef)
-Endfunction
+EndFunction
 

@@ -1,7 +1,7 @@
 Scriptname Placeable_ButterChurn_Script extends ObjectReference  
 
 
-int Property iResetHours = 12 Auto
+Int Property iResetHours = 12 Auto
 
 Event OnInit()
     RegisterForSingleUpdateGameTime(iResetHours)

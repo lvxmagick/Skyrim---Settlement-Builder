@@ -29,7 +29,7 @@ EndEvent
 
 
 
-Function Menu(int aiButton = 0)
+Function Menu(Int aiButton = 0)
       aiButton = MenuUi_Action_Flora_Hangable.show()
       self.BlockActivation()
 
@@ -47,7 +47,7 @@ If aiButton == 0
 
 
      ElseIf aiButton == 3
-        self.Disable(true)
+        self.Disable(True)
        game.getPlayer().addItem(MiscObj)
         DeleteWhenAble()
         Delete()
@@ -57,7 +57,7 @@ If aiButton == 0
 EndFunction
 
 
-Function MenuUi_PositionSelect_Container(int aiButton = 0)
+Function MenuUi_PositionSelect_Container(Int aiButton = 0)
       aiButton = MenuUi_PositionSelect_Container.show()
 
     If aiButton == 1
@@ -77,9 +77,9 @@ Function MenuUi_PositionSelect_Container(int aiButton = 0)
 EndFunction
 
 
-Function Z_Menu(Bool abMenu = True, int aiButton = 0, bool abFadeOut = False)
+Function Z_Menu(Bool abMenu = True, Int aiButton = 0, Bool abFadeOut = False)
    While abMenu
-   If aiButton != -1 ; Wait for input (this can prevent problems if recycling the aiButton argument in submenus)   
+   If aiButton != -1 ; Wait for input (this can prevent problems If recycling the aiButton argument in submenus)   
    aiButton =  Z_Ui.show()
      If aiButton == 0
      abMenu = False
@@ -113,9 +113,9 @@ Function Z_Menu(Bool abMenu = True, int aiButton = 0, bool abFadeOut = False)
     EndWhile
 EndFunction
 
-Function Y_Menu(Bool abMenu = True, int aiButton = 0, bool abFadeOut = False)
+Function Y_Menu(Bool abMenu = True, Int aiButton = 0, Bool abFadeOut = False)
    While abMenu
-   If aiButton != -1 ; Wait for input (this can prevent problems if recycling the aiButton argument in submenus)   
+   If aiButton != -1 ; Wait for input (this can prevent problems If recycling the aiButton argument in submenus)   
    aiButton =  Y_Ui.show()
      If aiButton == 0
      abMenu = False
@@ -150,9 +150,9 @@ Function Y_Menu(Bool abMenu = True, int aiButton = 0, bool abFadeOut = False)
     EndWhile
 EndFunction
 
-Function X_Menu(Bool abMenu = True, int aiButton = 0, bool abFadeOut = False)
+Function X_Menu(Bool abMenu = True, Int aiButton = 0, Bool abFadeOut = False)
    While abMenu
-   If aiButton != -1 ; Wait for input (this can prevent problems if recycling the aiButton argument in submenus)   
+   If aiButton != -1 ; Wait for input (this can prevent problems If recycling the aiButton argument in submenus)   
    aiButton =  X_Ui.show()
        If aiButton == 0
      abMenu = False
@@ -190,9 +190,9 @@ EndFunction
 
  
 
-Function Rotate_Menu(Bool abMenu = True, int aiButton = 0, bool abFadeOut = False)
+Function Rotate_Menu(Bool abMenu = True, Int aiButton = 0, Bool abFadeOut = False)
    While abMenu
-   If aiButton != -1 ; Wait for input (this can prevent problems if recycling the aiButton argument in submenus)   
+   If aiButton != -1 ; Wait for input (this can prevent problems If recycling the aiButton argument in submenus)   
    aiButton =  Rotate_Ui.show()
       If aiButton == 0
      abMenu = False
@@ -200,36 +200,36 @@ Function Rotate_Menu(Bool abMenu = True, int aiButton = 0, bool abFadeOut = Fals
 
      ElseIf aiButton == 1
            Self.SetAngle(0.0, 0.0, self.GetAngleZ() - 50.0)
-			 Self.Enable()    
+             Self.Enable()    
      
      ElseIf aiButton == 2
            Self.SetAngle(0.0, 0.0, self.GetAngleZ() - 30.0)
-			 Self.Enable()   
+             Self.Enable()   
      
         ElseIf aiButton == 3
            Self.SetAngle(0.0, 0.0, self.GetAngleZ() - 10.0)
-			 Self.Enable()    
+             Self.Enable()    
                
              ElseIf aiButton == 4
            Self.SetAngle(0.0, 0.0, self.GetAngleZ() - 1.0)
-			 Self.Enable()    
+             Self.Enable()    
  
     ElseIf aiButton == 5
            Self.SetAngle(0.0, 0.0, self.GetAngleZ() + 1.0)
-			 Self.Enable()   
+             Self.Enable()   
  
     ElseIf aiButton == 6
            Self.SetAngle(0.0, 0.0, self.GetAngleZ() + 10.0)
-			Self.Enable()    
+            Self.Enable()    
      
      ElseIf aiButton == 7
            Self.SetAngle(0.0, 0.0, self.GetAngleZ() + 30.0)
-			 Self.Enable()   
+             Self.Enable()   
 
         
      ElseIf aiButton == 8
            Self.SetAngle(0.0, 0.0, self.GetAngleZ() + 50.0)
-			 Self.Enable()   
+             Self.Enable()   
 
 
           
@@ -240,7 +240,7 @@ EndFunction
 
 
 ;Places Activator Chest
-Function MenuUi_Make_Container_Static(int aiButton = 0) ;Make Static Container
+Function MenuUi_Make_Container_Static(Int aiButton = 0) ;Make Static Container
       aiButton = MenuUi_Make_Container_Static.show()
 
    
@@ -250,7 +250,7 @@ Function MenuUi_Make_Container_Static(int aiButton = 0) ;Make Static Container
 
     ElseIf aiButton == 1
     DisableNoWait(True)
-    Self.Disable(true)
+    Self.Disable(True)
    Self.PlaceatMe(ContainerAct)       
     Self.DeleteWhenAble()
      Delete()
@@ -262,7 +262,7 @@ Function MenuUi_Make_Container_Static(int aiButton = 0) ;Make Static Container
 EndIf
 EndFunction 
 
-Function MenuUi_Make_NoneContainer_Static(int aiButton = 0) ;Make Static
+Function MenuUi_Make_NoneContainer_Static(Int aiButton = 0) ;Make Static
       aiButton = MenuUi_Make_NoneContainer_Static.show()
 
    If aiButton == 0
@@ -270,7 +270,7 @@ Function MenuUi_Make_NoneContainer_Static(int aiButton = 0) ;Make Static
 
     ElseIf aiButton == 1
     DisableNoWait(True)
-    Self.Disable(true)
+    Self.Disable(True)
     Self.PlaceatMe(StaticDummy)       
     Self.DeleteWhenAble()
      Delete()
@@ -280,7 +280,7 @@ EndFunction
 
 
 
-Function Plant_Flora(int aiButton = 0) ;Make Static
+Function Plant_Flora(Int aiButton = 0) ;Make Static
       aiButton = MenuUi_Plant_Flora_Static.show()
 
    If aiButton == 0
@@ -291,7 +291,7 @@ Function Plant_Flora(int aiButton = 0) ;Make Static
 
 
     DisableNoWait(True)
-    Self.Disable(true)
+    Self.Disable(True)
     Self.PlaceAtMe(Plant01) 
     Self.DeleteWhenAble()
     Delete()

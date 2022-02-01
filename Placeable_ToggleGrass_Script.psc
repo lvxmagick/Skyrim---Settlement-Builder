@@ -10,11 +10,11 @@ Utility.Wait(1)
 Toggle_GrassMenu()
 EndEvent
 
-Function Toggle_GrassMenu(int aibutton = 0)
+Function Toggle_GrassMenu(Int aibutton = 0)
 aibutton = Placeable_AAA_ToggleGrass02.show()
 
 If aibutton == 1
-Utility.SetINIBool("bAllowCreateGrass:Grass", false)
+Utility.SetINIBool("bAllowCreateGrass:Grass", False)
 Debug.Notification("Grass has been disabled - (Please Reload Cell)")
       
 

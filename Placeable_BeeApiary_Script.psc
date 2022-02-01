@@ -1,6 +1,6 @@
 Scriptname Placeable_BeeApiary_Script extends ObjectReference  
 
-int Property iResetHours = 72 Auto
+Int Property iResetHours = 72 Auto
 
 Event OnInit()
     RegisterForSingleUpdateGameTime(iResetHours)

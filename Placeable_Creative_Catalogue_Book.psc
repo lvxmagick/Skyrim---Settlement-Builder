@@ -6,7 +6,7 @@ Actor Property PlayerRef Auto
 MiscObject Property Catalogue Auto
 Message Property Placeable_ManualMenu_CreativeMode_Catalogue Auto
 Event OnEquipped(Actor akActor)
-  if akActor == Game.GetPlayer()
+  If akActor == Game.GetPlayer()
   Debug.Notification("Leave Inventory to Use Catalogue")
    Utility.Wait(0.1)
    Cast() 
@@ -22,6 +22,6 @@ EndEvent
 
 Function Cast()
 Placeable_CreativeMode_Catalouge_Spell.Cast(PlayerRef)
-Endfunction
+EndFunction
 
 

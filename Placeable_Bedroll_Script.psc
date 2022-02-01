@@ -10,12 +10,12 @@ Event OnActivate(ObjectReference akActionRef)
 Menu()
 EndEvent
 
-Function Menu(int aiButton = 0)
+Function Menu(Int aiButton = 0)
       aiButton = Bedroll_Ui.Show()
 
     If aiButton == 1         ; Unroll Bedolll  
      PlaceAtMe(Bedroll01)
-     self.Disable(true)
+     self.Disable(True)
         DeleteWhenAble()
         Delete()
 
@@ -23,7 +23,7 @@ Function Menu(int aiButton = 0)
  ElseIf aiButton == 2  ; Pickup
        
        ElseIf aiButton == 5
-       self.Disable(true)
+       self.Disable(True)
        game.getPlayer().addItem(MiscObj)
         DeleteWhenAble()
         Delete()

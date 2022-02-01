@@ -22,7 +22,7 @@ Event OnActivate(ObjectReference akActionRef)
 Placeable_A_DeleteAll.AddForm(PlaceatMe(Thral))
 
 
-Disable(true)
+Disable(True)
 Deletewhenable()
 Delete()
 EndEvent

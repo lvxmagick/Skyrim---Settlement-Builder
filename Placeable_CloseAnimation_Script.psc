@@ -16,10 +16,10 @@ EndEvent
  
 
 Event OnUpdate()
-  if ( ! Game.IsLookingControlsEnabled() )
+  If ( ! Game.IsLookingControlsEnabled() )
     RegisterForSingleUpdate(0.5)
     return
   else 
  Activate_Object01.SetOpen(False)
-Endif
+EndIf
 EndEvent

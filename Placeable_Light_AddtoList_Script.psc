@@ -11,7 +11,7 @@ Function Oninit()
 Placeable_A_DeleteAll = Game.GetFormFromFile(0x00E26327, "LvxMagick - Skyrim - Settlement Builder.Esp") as Formlist;  | 
 ;======================================================================================================================
 
-Endfunction
+EndFunction
 
 Event Onload()
 Placeable_A_DeleteAll.AddForm(Self)

@@ -5,7 +5,7 @@ import game
 import debug
 Message Property BattleStartMessage Auto
 Message Property  Placeable_AA_RaidMenu Auto
-int Property iResetRound = 1 Auto
+Int Property iResetRound = 1 Auto
 MiscObject property MiscObj auto
 
 
@@ -143,7 +143,7 @@ Debug.Notification("Enemy Reinforcements Have Arrived")
              
 EndEvent
 
-Function Menu(int aiButton = 0)
+Function Menu(Int aiButton = 0)
        aiButton = Placeable_AA_RaidMenu.show()   ;Shows Bandit Raid Menu to continue the Raid or startOver
  If aiButton == 0 
 RegisterForSingleUpdateGameTime(iResetRound) ;Event  Init() is at the begging of the script
@@ -152,7 +152,7 @@ RegisterForSingleUpdateGameTime(iResetRound) ;Event  Init() is at the begging of
            Debug.Messagebox("You have 1 hours before enemy reinforcements arrive")
 
      elseIf aiButton == 1  
-       self.Disable(true)
+       self.Disable(True)
        game.getPlayer().addItem(MiscObj)
        DeleteWhenAble()
        Delete()

@@ -20,11 +20,11 @@ If (Placeable_Global_IUnderstand01.GetValue() == 0.0)
  Menu()
  
  EndIf
- EndIf 	
+ EndIf     
 EndEvent
 
 
-Function Menu(int aiButton = 0)
+Function Menu(Int aiButton = 0)
      aiButton = Placeable_AAA_UndertandCupsMenuUI.show() ; Actual agreement Menu
 
     If aiButton == 0

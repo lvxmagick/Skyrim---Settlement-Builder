@@ -5,7 +5,7 @@ Activator Property ActivatorEX_Act Auto
 Event OnActivate(ObjectReference akActionRef)
 
  DisableNoWait(True)
-   Self.Disable(true)
+   Self.Disable(True)
    Self.PlaceatMe(ActivatorEX_Act)       
    Self.DeleteWhenAble()
    DeleteWhenAble()

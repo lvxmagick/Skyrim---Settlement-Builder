@@ -32,76 +32,76 @@ Actor Property PlayerRef Auto
 Static Property StaticDummy Auto
 Activator Property My_Activator_Static Auto
 Event OnLoad()
-	Loaded = True
-	
+    Loaded = True
+    
        If IsOptionState
-		GoToState(" IsOptionState")
-	Else
-		GoToState("PlaceItem")
-	EndIf
+        GoToState(" IsOptionState")
+    Else
+        GoToState("PlaceItem")
+    EndIf
 EndEvent
 
 Event OnEquipped(Actor akActor)
-	If !Loaded
-       		If IsOptionState
-			GoToState(" IsOptionState")
-		Else
-			GoToState("PlaceItem")
-		EndIf
-	EndIf
+    If !Loaded
+               If IsOptionState
+            GoToState(" IsOptionState")
+        Else
+            GoToState("PlaceItem")
+        EndIf
+    EndIf
 EndEvent
 
 ;====================================================================================
 
 Function Menu(Int aiButton = -1,  Bool abMenu = True)
-	Utility.Wait(1.0)
-	While abMenu
-		aiButton =   MenuUi.show()
-		If  aiButton == 0						;Move Up
-			
-		ElseIf aiButton == 1					;Move Down
-			Z_Menu()
-		ElseIf aiButton == 2					;Turn Left
-			 Y_Menu()
-		ElseIf aiButton == 3					;Turn Right
-			X_Menu()
+    Utility.Wait(1.0)
+    While abMenu
+        aiButton =   MenuUi.show()
+        If  aiButton == 0                        ;Move Up
+            
+        ElseIf aiButton == 1                    ;Move Down
+            Z_Menu()
+        ElseIf aiButton == 2                    ;Turn Left
+             Y_Menu()
+        ElseIf aiButton == 3                    ;Turn Right
+            X_Menu()
 
-		ElseIf aiButton == 4					;Start Over
-			Rotate_Menu()
+        ElseIf aiButton == 4                    ;Start Over
+            Rotate_Menu()
 
-		ElseIf aiButton == 5	
+        ElseIf aiButton == 5    
                   Self.SetAngle(0.0, 0.0, Self.GetAngleZ())
                 
-	      ElseIf aiButton == 6
-             self.Disable(true)
+          ElseIf aiButton == 6
+             self.Disable(True)
              game.getPlayer().addItem(MiscObj)
-             Delete()	
+             Delete()    
             
               ElseIf aiButton == 6
               MenuUi_MakeStatic()
                   
 EndIf
-	EndWhile
+    EndWhile
 EndFunction
 
 
 State PlaceItem
 
-	Event OnBeginState()
+    Event OnBeginState()
              MEnu()
-		Useable_Obj_Act = PlayerRef.PlaceAtMe(PlaceableObject_Ind)
-		Useable_Obj_Act.MoveTo(PlayerRef, 200.0 * Math.Sin(PlayerRef.GetAngleZ()), 200.0 * Math.Cos(PlayerRef.GetAngleZ()), 60.0)
-		Useable_Obj_Act.SetAngle(0.0, 0.0, Useable_Obj_Act.GetAngleZ())
-      EndEvent	
+        Useable_Obj_Act = PlayerRef.PlaceAtMe(PlaceableObject_Ind)
+        Useable_Obj_Act.MoveTo(PlayerRef, 200.0 * Math.Sin(PlayerRef.GetAngleZ()), 200.0 * Math.Cos(PlayerRef.GetAngleZ()), 60.0)
+        Useable_Obj_Act.SetAngle(0.0, 0.0, Useable_Obj_Act.GetAngleZ())
+      EndEvent    
       EndState
 
 ;====================================================================================
 ;---------------------------------------------------------------------------------------------------------Z_Menu---------------------------------------------------------------------
 
-Function Z_Menu(Bool abMenu = True, int aiButton = 0, bool abFadeOut = False)
+Function Z_Menu(Bool abMenu = True, Int aiButton = 0, Bool abFadeOut = False)
 
    While abMenu
-   If aiButton != -1 ; Wait for input (this can prevent problems if recycling the aiButton argument in submenus)  
+   If aiButton != -1 ; Wait for input (this can prevent problems If recycling the aiButton argument in submenus)  
    aiButton =  Z_Ui.show()
      If aiButton == 0
      abMenu = False
@@ -140,9 +140,9 @@ EndFunction
 
 ;----------------------------------------------------------------------------------------------------Y_Menu--------------------------------------------------------------------------
 
-Function Y_Menu(Bool abMenu = True, int aiButton = 0, bool abFadeOut = False)
+Function Y_Menu(Bool abMenu = True, Int aiButton = 0, Bool abFadeOut = False)
    While abMenu
-   If aiButton != -1 ; Wait for input (this can prevent problems if recycling the aiButton argument in submenus)   
+   If aiButton != -1 ; Wait for input (this can prevent problems If recycling the aiButton argument in submenus)   
    aiButton =  Y_Ui.show()
      If aiButton == 0
      abMenu = False
@@ -178,9 +178,9 @@ EndFunction
 
 ;---------------------------------------------------------------------------------------------X_Menu-----------------------------------------------------------------------------------
 
-Function X_Menu(Bool abMenu = True, int aiButton = 0, bool abFadeOut = False)
+Function X_Menu(Bool abMenu = True, Int aiButton = 0, Bool abFadeOut = False)
    While abMenu
-   If aiButton != -1 ; Wait for input (this can prevent problems if recycling the aiButton argument in submenus)   
+   If aiButton != -1 ; Wait for input (this can prevent problems If recycling the aiButton argument in submenus)   
    aiButton =  X_Ui.show()
        If aiButton == 0
      abMenu = False
@@ -218,9 +218,9 @@ EndFunction
 
 ;--------------------------------------------------------------------------------------Rotate_Menu------------------------------------------------------------------------------- 
 
-Function Rotate_Menu(Bool abMenu = True, int aiButton = 0, bool abFadeOut = False)
+Function Rotate_Menu(Bool abMenu = True, Int aiButton = 0, Bool abFadeOut = False)
    While abMenu
-   If aiButton != -1 ; Wait for input (this can prevent problems if recycling the aiButton argument in submenus)   
+   If aiButton != -1 ; Wait for input (this can prevent problems If recycling the aiButton argument in submenus)   
    aiButton =  Rotate_Ui.show()
       If aiButton == 0
      abMenu = False
@@ -267,12 +267,12 @@ Function Rotate_Menu(Bool abMenu = True, int aiButton = 0, bool abFadeOut = Fals
 EndFunction
 
 
-Function MenuUi_MakeStatic(int aiButton = 0) ;Make Static
+Function MenuUi_MakeStatic(Int aiButton = 0) ;Make Static
       aiButton = MenuUi_MakeStatic.show()
 
     If aiButton == 1
     DisableNoWait(True)
-    Self.Disable(true)
+    Self.Disable(True)
    Self.PlaceatMe(StaticDummy)
    Self.PlaceAtMe(My_Activator_Static)       
     Delete()
