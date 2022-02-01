@@ -5,23 +5,23 @@ Scriptname Placeable_Message_Script extends ObjectReference
 
 ;Original universal script created by Darkfox127
 ;Any potential problems which may arise from this script being changed from the original are the sole responsibility of the mod author making the changes.
-;Please be sure to credit if you this in your own published mod.
+;Please be sure to credit If you this in your own published mod.
 
 
 Bool Property  DONE Auto hidden
 
 Bool Property doOnce = False Auto
-{Set to True if you wish this message to only show once.
+{Set to True If you wish this message to only show once.
 
 Default = False}
 
 Bool Property CustomMsg = False Auto
-{Set to True if you wish to a Mesage pr-created in the Creation Kit.
+{Set to True If you wish to a Mesage pr-created in the Creation Kit.
 
 Default = False}
 
 Bool Property MsgBox = True Auto
-{Set to False if you wish to show a notification.
+{Set to False If you wish to show a notification.
 
 Default = True}
 
@@ -35,25 +35,25 @@ String Property Text Auto
 
 Event OnActivate(ObjectReference akActionRef)
 
-	If doOnce == True
+    If doOnce == True
 
-		If DONE == False
+        If DONE == False
 
-			ShowMessage()
-			DONE = True
+            ShowMessage()
+            DONE = True
 
-		Else
+        Else
 
-			;Do Nothing
-			Return
+            ;Do Nothing
+            Return
 
-		EndIf
+        EndIf
 
-	Else
+    Else
 
-		ShowMessage()
+        ShowMessage()
 
-	EndIf
+    EndIf
 
 EndEvent
 
@@ -61,14 +61,14 @@ EndEvent
 
 Function ShowMessage()
 
-	If CustomMsg == True
-		MyMessage.show()
-	Else
-		If MsgBox == True
-			debug.messagebox(Text)
-		Else
-			debug.notification(Text)
-		EndIf
-	EndIf
+    If CustomMsg == True
+        MyMessage.show()
+    Else
+        If MsgBox == True
+            debug.messagebox(Text)
+        Else
+            debug.notification(Text)
+        EndIf
+    EndIf
 
 EndFunction

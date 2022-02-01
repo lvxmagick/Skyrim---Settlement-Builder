@@ -37,7 +37,7 @@ Event OnActivate(ObjectReference akActionRef)
     Menu()                                                     ;use regular menu
   EndIf
 Endevent
-Function Menu(int aiButton = 0)
+Function Menu(Int aiButton = 0)
   
 ;--------------------------------------------------------------------------------------------Main Menu--------------------------------------------------------------------------
  
@@ -61,7 +61,7 @@ Function Menu(int aiButton = 0)
   
  
       ElseIf aiButton == 6
-       self.Disable(true)
+       self.Disable(True)
        game.getPlayer().addItem(MiscObj)
         Delete()
       
@@ -77,10 +77,10 @@ EndFunction
   
 ;---------------------------------------------------------------------------------------------------------Z_Menu---------------------------------------------------------------------
 
-Function Z_Menu(Bool abMenu = True, int aiButton = 0, bool abFadeOut = False)
+Function Z_Menu(Bool abMenu = True, Int aiButton = 0, Bool abFadeOut = False)
 
    While abMenu
-   If aiButton != -1 ; Wait for input (this can prevent problems if recycling the aiButton argument in submenus)  
+   If aiButton != -1 ; Wait for input (this can prevent problems If recycling the aiButton argument in submenus)  
    aiButton =  Z_Ui.show()
      If aiButton == 0
      abMenu = False
@@ -116,9 +116,9 @@ EndFunction
 
 ;----------------------------------------------------------------------------------------------------Y_Menu--------------------------------------------------------------------------
 
-Function Y_Menu(Bool abMenu = True, int aiButton = 0, bool abFadeOut = False)
+Function Y_Menu(Bool abMenu = True, Int aiButton = 0, Bool abFadeOut = False)
    While abMenu
-   If aiButton != -1 ; Wait for input (this can prevent problems if recycling the aiButton argument in submenus)   
+   If aiButton != -1 ; Wait for input (this can prevent problems If recycling the aiButton argument in submenus)   
    aiButton =  Y_Ui.show()
      If aiButton == 0
      abMenu = False
@@ -155,9 +155,9 @@ EndFunction
 
 ;---------------------------------------------------------------------------------------------X_Menu-----------------------------------------------------------------------------------
 
-Function X_Menu(Bool abMenu = True, int aiButton = 0, bool abFadeOut = False)
+Function X_Menu(Bool abMenu = True, Int aiButton = 0, Bool abFadeOut = False)
    While abMenu
-   If aiButton != -1 ; Wait for input (this can prevent problems if recycling the aiButton argument in submenus)   
+   If aiButton != -1 ; Wait for input (this can prevent problems If recycling the aiButton argument in submenus)   
    aiButton =  X_Ui.show()
        If aiButton == 0
      abMenu = False
@@ -195,9 +195,9 @@ EndFunction
 
 ;--------------------------------------------------------------------------------------Rotate_Menu------------------------------------------------------------------------------- 
 
-Function Rotate_Menu(Bool abMenu = True, int aiButton = 0, bool abFadeOut = False)
+Function Rotate_Menu(Bool abMenu = True, Int aiButton = 0, Bool abFadeOut = False)
    While abMenu
-   If aiButton != -1 ; Wait for input (this can prevent problems if recycling the aiButton argument in submenus)   
+   If aiButton != -1 ; Wait for input (this can prevent problems If recycling the aiButton argument in submenus)   
    aiButton =  Rotate_Ui.show()
       If aiButton == 0
      abMenu = False
@@ -245,8 +245,8 @@ EndFunction
 
 ;------------------------------------------------------------------------------------Options_Menu----------------------------------------------------------------------------
 
-Function MenuUi_Options( int aiButton = 0, bool abFadeOut = False)
-     If aiButton != -1 ; Wait for input (this can prevent problems if recycling the aiButton argument in submenus)   
+Function MenuUi_Options( Int aiButton = 0, Bool abFadeOut = False)
+     If aiButton != -1 ; Wait for input (this can prevent problems If recycling the aiButton argument in submenus)   
    aiButton =  MenuUi_Options.show()
       If aiButton == 0
      
@@ -259,8 +259,8 @@ EndIf
 EndFunction
 
 
-Function MenuUi_Options_PositionerMenu( int aiButton = 0, bool abFadeOut = False) ; Show Option Menu
-      If aiButton != -1 ; Wait for input (this can prevent problems if recycling the aiButton argument in submenus)
+Function MenuUi_Options_PositionerMenu( Int aiButton = 0, Bool abFadeOut = False) ; Show Option Menu
+      If aiButton != -1 ; Wait for input (this can prevent problems If recycling the aiButton argument in submenus)
 aiButton= MenuUi_Options_PositionerMenu.Show()
   If aibutton == 0
   
@@ -277,12 +277,12 @@ EndFunction
 ;--------------------------------------------------------------------------------------------Static_Menu---------------------------------------------------------------------
 
 
-Function MenuUi_MakeStatic(int aiButton = 0) ;Make Static
+Function MenuUi_MakeStatic(Int aiButton = 0) ;Make Static
       aiButton = MenuUi_MakeStatic.show()
 
     If aiButton == 1
     DisableNoWait(True)
-    Self.Disable(true)
+    Self.Disable(True)
    Self.PlaceatMe(StaticDummy)
    Self.PlaceAtMe(My_Activator_Static)       
     Delete()
@@ -303,7 +303,7 @@ EndFunction
 
 
 
-Function MenuUi_SKSE(bool abFadeIn = false)
+Function MenuUi_SKSE(Bool abFadeIn = False)
    Int aiButton =  MenuUi_SKSE.show()       
       
 
@@ -326,7 +326,7 @@ Function MenuUi_SKSE(bool abFadeIn = false)
   
     
       ElseIf aiButton == 6
-       self.Disable(true)
+       self.Disable(True)
        game.getPlayer().addItem(MiscObj)
         Delete()
      
@@ -342,7 +342,7 @@ EndFunction
 
 ;----------------------------------------------------------------------------Z_SKSE_Menu--------------------------------------------------------------------------------------------------------------------------------------
 
-Function Z_Menu_SKSE(bool abFadeIn = false)
+Function Z_Menu_SKSE(Bool abFadeIn = False)
    Int aiButton =  Z_Ui_SKSE.show()
 
 
@@ -389,12 +389,12 @@ Function Z_Menu_SKSE(bool abFadeIn = false)
         PositionObject.Delete()
         
         Z_Menu_SKSE(abFadeIn) ;re-opens menu
-    Endif
+    EndIf
 EndFunction
  
 ;---------------------------------------------------------------------------------Function_Y_SKSE-------------------------------------
  
-Function Y_Menu_SKSE(bool abFadeIn = false)
+Function Y_Menu_SKSE(Bool abFadeIn = False)
    Int aiButton =  Y_Ui_SKSE.show()
 
 
@@ -442,7 +442,7 @@ Function Y_Menu_SKSE(bool abFadeIn = false)
         PositionObject.Delete()
         
         Y_Menu_SKSE(abFadeIn) ;re-opens menu
-    Endif
+    EndIf
 EndFunction
  
     
@@ -450,7 +450,7 @@ EndFunction
  
  
  
-Function X_Menu_SKSE(bool abFadeIn = false)
+Function X_Menu_SKSE(Bool abFadeIn = False)
    Int aiButton =  X_Ui_SKSE.show()
 
 
@@ -498,12 +498,12 @@ Function X_Menu_SKSE(bool abFadeIn = false)
         PositionObject.Delete()
         
         X_Menu_SKSE(abFadeIn) ;re-opens menu
-    Endif
+    EndIf
 EndFunction
  
 ;--------------------------------------------------------------------------------Rotate_SKSE------------------------------------------------------------------
  
-Function Rotate_Menu_SKSE(bool abFadeIn = false)
+Function Rotate_Menu_SKSE(Bool abFadeIn = False)
    Int aiButton =  Rotate_Ui_SKSE.show()
    
     Utility.Wait(0.1)
@@ -564,13 +564,13 @@ Function Rotate_Menu_SKSE(bool abFadeIn = false)
        Rotate_Menu_SKSE(abFadeIn) ;Re- opens menu
 
     
-Endif
+EndIf
 EndFunction
 ;-----------------------------------------------------------------------------------------------------------------Options_SKSE------------------------------------------------------------------------------
 
-Function MenuUi_Options_SKSE(int aiButton = 0, bool abFadeOut = False)
+Function MenuUi_Options_SKSE(Int aiButton = 0, Bool abFadeOut = False)
    
-   If aiButton != -1 ; Wait for input (this can prevent problems if recycling the aiButton argument in submenus)   
+   If aiButton != -1 ; Wait for input (this can prevent problems If recycling the aiButton argument in submenus)   
    aiButton =  MenuUi_Options_SKSE.show()
       If aiButton == 0
      
@@ -584,9 +584,9 @@ EndIf
 EndFunction
 
 
-Function MenuUi_Options_PositionerMenu_SKSE(int aiButton = 0, bool abFadeOut = False) ; Show Option Menu
+Function MenuUi_Options_PositionerMenu_SKSE(Int aiButton = 0, Bool abFadeOut = False) ; Show Option Menu
   
-    If aiButton != -1 ; Wait for input (this can prevent problems if recycling the aiButton argument in submenus)
+    If aiButton != -1 ; Wait for input (this can prevent problems If recycling the aiButton argument in submenus)
 aiButton= MenuUi_Options_PositionerMenu_SKSE.Show()
   If aibutton == 0
    
@@ -603,12 +603,12 @@ EndFunction
 ;-----------------------------------------------------------------------------------------------------------------Make Static SKSE--------------------------------------------------------------------------
 
 
-Function MenuUi_MakeStatic_SKSE(int aiButton = 0) ;Make Static
+Function MenuUi_MakeStatic_SKSE(Int aiButton = 0) ;Make Static
       aiButton = MenuUi_MakeStatic_SKSE.show()
 
     If aiButton == 1
     DisableNoWait(True)
-    Self.Disable(true)
+    Self.Disable(True)
     Self.PlaceatMe(StaticDummy)  
     Self.PlaceatMe(My_Activator_Static)    
     Delete()

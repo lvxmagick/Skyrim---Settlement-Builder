@@ -15,12 +15,12 @@ Event OnActivate(ObjectReference akActionRef)
 EndEvent
  
 Event OnUpdate()
-  if ( ! Game.IsLookingControlsEnabled() )
+  If ( ! Game.IsLookingControlsEnabled() )
     RegisterForSingleUpdate(0.5)
     return
   else 
     CreativeMode.SetValue(0.0)
           
 
-  endif
+  EndIf
 EndEvent

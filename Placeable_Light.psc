@@ -13,10 +13,10 @@ Event OnInit()
 EndEvent
 
 Event OnUpdate()
-    If (IO_01.GetValue() as bool)
+    If (IO_01.GetValue() as Bool)
         Enable()
  DisableNoWait(True)
-    Self.Disable(true)
+    Self.Disable(True)
    Self.PlaceatMe(Candelabra_ON)
    ObjectReference tempLight = Self.PlaceAtMe(Candle_Light_Default)
    Self.PlaceAtMe(Candle_Light_Default)       
@@ -26,7 +26,7 @@ Event OnUpdate()
        Else
         Disable()
  DisableNoWait(True)
-    Self.Disable(true)
+    Self.Disable(True)
    Self.PlaceatMe(Candelabra_Off)       
       
   Self.DeleteWhenAble()

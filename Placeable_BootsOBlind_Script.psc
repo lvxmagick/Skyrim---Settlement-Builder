@@ -7,11 +7,11 @@ ImageSpaceModifier Property BootsOBlind Auto
 
 Event OnEquipped(Actor akActor)
   
-  if akActor == PlayerRef
+  If akActor == PlayerRef
     BootsOBlind.Apply()
     PlayerRef.ModActorValue("SpeedMult", 1000.0) 
     PlayerRef.ModActorValue("CarryWeight", 0.1)
-  endif
+  EndIf
 
 EndEvent
 

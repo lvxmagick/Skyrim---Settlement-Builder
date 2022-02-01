@@ -12,7 +12,7 @@ Game.EnablePlayerControls(False, False, False, False, False, True)
 Main_Menu()
 EndEvent
 
-Function Main_Menu( int aiButton = 0)
+Function Main_Menu( Int aiButton = 0)
      aiButton = Main_Menu.show()
                           If aiButton == 1
            Rotate_Ui_Left()
@@ -25,7 +25,7 @@ EndIf
 EndFunction
 
 
-Function Rotate_Ui_Left(Bool abmenu= True, int aiButton = 0)
+Function Rotate_Ui_Left(Bool abmenu= True, Int aiButton = 0)
     While abMenu            
                If aiButton != -1
 
@@ -34,37 +34,37 @@ Function Rotate_Ui_Left(Bool abmenu= True, int aiButton = 0)
                                  abMenu = False
            If aiButton == 1
            Self.SetAngle(0.0, 0.0, self.GetAngleZ() - 5.0)
-			Utility.Wait(1.0)    
+            Utility.Wait(1.0)    
      
      ElseIf aiButton == 2
            Self.SetAngle(0.0, 0.0, self.GetAngleZ() - 10.0)
-			Utility.Wait(1.0)    
+            Utility.Wait(1.0)    
      
         ElseIf aiButton == 3
            Self.SetAngle(0.0, 0.0, self.GetAngleZ() - 15.0)
-			Utility.Wait(1.0)    
+            Utility.Wait(1.0)    
 
  
-    Endif
+    EndIf
 EndIf 
 EndWhile
    EndFunction
 
 
-Function Rotate_Ui_Right(int aiButton = 0)
+Function Rotate_Ui_Right(Int aiButton = 0)
       aiButton = Rotate_Ui_Right.show()
 
     If aiButton == 1
            Self.SetAngle(0.0, 0.0, self.GetAngleZ() + 5.0)
-			Utility.Wait(1.0)    
+            Utility.Wait(1.0)    
  
     ElseIf aiButton == 2
            Self.SetAngle(0.0, 0.0, self.GetAngleZ() + 10.0)
-			Utility.Wait(1.0)    
+            Utility.Wait(1.0)    
      
      ElseIf aiButton == 3
            Self.SetAngle(0.0, 0.0, self.GetAngleZ() + 15.0)
-			Utility.Wait(1.0)    
+            Utility.Wait(1.0)    
 
      
 EndIf

@@ -1,12 +1,12 @@
 Scriptname Placeable_BlockActivation_Test extends ObjectReference  
 
 
-function Initialize()
-	self.BlockActivation()
-	parent.Initialize()
-endFunction
+Function Initialize()
+    self.BlockActivation()
+    parent.Initialize()
+EndFunction
 
-function UseObject(ObjectReference akActionRef)
-	SetSelectedObjectConjured(self)
+Function UseObject(ObjectReference akActionRef)
+    SetSelectedObjectConjured(self)
 
 EndFunction

@@ -8,7 +8,7 @@ Event OnActivate(ObjectReference akActionRef)
 Self.PlaceAtMe(Firewood01)
 
 
-self.Disable(true)
+self.Disable(True)
 Self.Deletewhenable()
 Self.Delete()
 EndEvent

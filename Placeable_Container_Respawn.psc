@@ -1,6 +1,6 @@
 Scriptname Placeable_Container_Respawn extends ObjectReference  
 
-int Property iResetHours = 48 Auto
+Int Property iResetHours = 48 Auto
 
 Event OnInit()
     RegisterForSingleUpdateGameTime(iResetHours)

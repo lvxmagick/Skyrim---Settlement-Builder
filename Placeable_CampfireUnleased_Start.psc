@@ -67,17 +67,17 @@ EndEvent
 ;---------------------------------------------------------------------------------------------
 
 
-Function Menu01(int aiButton = 0)
+Function Menu01(Int aiButton = 0)
      aiButton = Placeable_AAA_CampfireUnleashed_Start_Message.show()
 
     If aiButton == 0
       Utility.Wait(1)
     Menu()
-    Game.GetPlayer().AddSpell(Placeable_RecipesOff_Spell, false )
-    Game.GetPlayer().AddSpell(Placeable_Options_Spell, false) 
-    ;Game.GetPlayer().AddSpell(Placeable_PowerConfig_Spell_02, false) 
+    Game.GetPlayer().AddSpell(Placeable_RecipesOff_Spell, False )
+    Game.GetPlayer().AddSpell(Placeable_Options_Spell, False) 
+    ;Game.GetPlayer().AddSpell(Placeable_PowerConfig_Spell_02, False) 
     Game.GetPlayer().AddItem(placeable___Campfire_Unleashed_Manual)
-    Game.GetPlayer().AddSpell(Placeable_RecipesOff_Spell, false)
+    Game.GetPlayer().AddSpell(Placeable_RecipesOff_Spell, False)
     ;debug.notification("Campfire Unleashed: Base Powers Added")
     Game.GetPlayer().RemoveSpell(Placeable_CampfireUnleashed_Start_Spell)
     Utility.Wait(0.2)
@@ -93,7 +93,7 @@ EndFunction
 
 ;-------------------------------------------------
 
-Function Menu(int aiButton = 0)
+Function Menu(Int aiButton = 0)
      aiButton = Placeable_AAA_ManualMenu_Welcome.show()
 
 ;WELCOME MENU
@@ -108,40 +108,40 @@ EndFunction
 ;ADD SPELLS MAIN MENU
 ;---------------------------------------------------------------------------------------------
 
-Function ManualMenu_AddSpells(int aiButton = 0) ;Add All Spells
+Function ManualMenu_AddSpells(Int aiButton = 0) ;Add All Spells
       aiButton =  ManualMenu_AddSpells.show()
 
 
     If aiButton == 1
                
-        Game.GetPlayer().AddSpell(CreativeModeSpell, false) 
-        Game.GetPlayer().AddSpell(CreativeCatalogueSpell, false)
+        Game.GetPlayer().AddSpell(CreativeModeSpell, False) 
+        Game.GetPlayer().AddSpell(CreativeCatalogueSpell, False)
         Game.GetPlayer().AddItem(CreativeCatalogueMisc, 1)
 
-        Game.GetPlayer().AddSpell(TCLSpell, false)
-        Game.GetPlayer().AddSpell(ToggleGrassSpell, false)
+        Game.GetPlayer().AddSpell(TCLSpell, False)
+        Game.GetPlayer().AddSpell(ToggleGrassSpell, False)
   
-        Game.GetPlayer().AddSpell(StoreFrontSpell, false)
-        Game.GetPlayer().AddSpell(SmithingSpell, false) 
-        Game.GetPlayer().AddSpell(SharpeningSpell, false) 
-        Game.GetPlayer().AddSpell(SmeltingSpell, false)
-        Game.GetPlayer().AddSpell(ArmourerSpell, false) 
-        Game.GetPlayer().AddSpell(TanningSpell, false) 
-        Game.GetPlayer().AddSpell(StaffEnchantingSpell, false)
-        Game.GetPlayer().AddSpell(CreativeStorageSpell, false)
-        Game.GetPlayer().AddSpell(EnchantingSpell, false)
-        Game.GetPlayer().AddSpell(AlchemySpell, false)
-        Game.GetPlayer().AddSpell(CookingSpell, false)
-        Game.GetPlayer().AddSpell(BakingSpell, false) 
-        Game.GetPlayer().AddSpell(SKSE_PositionerSpell, false)
-        Game.GetPlayer().AddSpell(Dice01Spell, false)   ; Dice
-        Game.GetPlayer().AddSpell(YesOrNoSpell, false)
+        Game.GetPlayer().AddSpell(StoreFrontSpell, False)
+        Game.GetPlayer().AddSpell(SmithingSpell, False) 
+        Game.GetPlayer().AddSpell(SharpeningSpell, False) 
+        Game.GetPlayer().AddSpell(SmeltingSpell, False)
+        Game.GetPlayer().AddSpell(ArmourerSpell, False) 
+        Game.GetPlayer().AddSpell(TanningSpell, False) 
+        Game.GetPlayer().AddSpell(StaffEnchantingSpell, False)
+        Game.GetPlayer().AddSpell(CreativeStorageSpell, False)
+        Game.GetPlayer().AddSpell(EnchantingSpell, False)
+        Game.GetPlayer().AddSpell(AlchemySpell, False)
+        Game.GetPlayer().AddSpell(CookingSpell, False)
+        Game.GetPlayer().AddSpell(BakingSpell, False) 
+        Game.GetPlayer().AddSpell(SKSE_PositionerSpell, False)
+        Game.GetPlayer().AddSpell(Dice01Spell, False)   ; Dice
+        Game.GetPlayer().AddSpell(YesOrNoSpell, False)
         debug.messagebox("All Powers Added")
     
 
     ElseIf aiButton == 2
-        Game.GetPlayer().AddSpell(CreativeModeSpell, false)
-        Game.GetPlayer().AddSpell(CreativeCatalogueSpell, false)
+        Game.GetPlayer().AddSpell(CreativeModeSpell, False)
+        Game.GetPlayer().AddSpell(CreativeCatalogueSpell, False)
         Game.GetPlayer().AddItem(CreativeCatalogueMisc, 1)
 
        ;debug.Notification("Creative Mode - Added")
@@ -165,7 +165,7 @@ EndFunction
 ;REMOVE SPELLS MAIN MENU
 ;---------------------------------------------------------------------------------------------
 
-Function ManualMenu_RemoveSpells(int aiButton = 0)
+Function ManualMenu_RemoveSpells(Int aiButton = 0)
       aiButton =  ManualMenu_RemoveSpells.show()
 
 
@@ -249,7 +249,7 @@ EndFunction
 ;REMOVE FAST CRAFT SPELLS MAIN MENU 
 ;---------------------------------------------------------------------------------------------
 
-Function ManualMenu_RemoveSpells_FastCraft(int aiButton = 0)
+Function ManualMenu_RemoveSpells_FastCraft(Int aiButton = 0)
       aiButton =  ManualMenu_RemoveSpells_FastCraft.show()
 
     If aiButton == 1
@@ -309,14 +309,14 @@ Function ManualMenu_RemoveSpells_FastCraft(int aiButton = 0)
    ElseIf aiButton == 7 
       ManualMenu_RemoveSpells_FastCraft_P2()
 
- Endif
+ EndIf
 EndFunction
 
 ;----------------------------------------------------------------------------------------------
 ;REMOVE FAST CRAFTING SPELLS - PAGE 2
 ;---------------------------------------------------------------------------------------------
 
-Function ManualMenu_RemoveSpells_FastCraft_P2(int aiButton = 0)
+Function ManualMenu_RemoveSpells_FastCraft_P2(Int aiButton = 0)
       aiButton =  ManualMenu_RemoveSpells_FastCraft_P2.show()
  
 
@@ -353,7 +353,7 @@ EndFunction
 ;----------------------------------------------------------------------------------------------
 ;REMOVE CREATIVE SPECIAL SPELLS
 ;---------------------------------------------------------------------------------------------
-Function ManualMenu_RemoveSpells_Creative_Special(int aiButton = 0)
+Function ManualMenu_RemoveSpells_Creative_Special(Int aiButton = 0)
       aiButton =  ManualMenu_RemoveSpells_Creative_Special.show()
  
 
@@ -378,7 +378,7 @@ EndFunction
 ;---------------------------------------------------------------------------------------------
 
 
-Function ManualMenu_AddSpells_FastCraft(int aiButton = 0)
+Function ManualMenu_AddSpells_FastCraft(Int aiButton = 0)
       aiButton =  ManualMenu_AddSpells_FastCraft.show()
 
 
@@ -429,7 +429,7 @@ EndFunction
 ;ADD FAST CRAFTING SPELLS - PAGE 2
 ;---------------------------------------------------------------------------------------------
 
-Function ManualMenu_AddSpells_FastCraft_P2(int aiButton = 0)
+Function ManualMenu_AddSpells_FastCraft_P2(Int aiButton = 0)
       aiButton =  ManualMenu_AddSpells_FastCraft_P2.show()
 
  
@@ -462,7 +462,7 @@ EndFunction
 ;----------------------------------------------------------------------------------------------
 ;ADD CREATIVE SPECIAL SPELLS
 ;---------------------------------------------------------------------------------------------
-Function ManualMenu_AddSpells_Creative_Special(int aiButton = 0)
+Function ManualMenu_AddSpells_Creative_Special(Int aiButton = 0)
       aiButton =  ManualMenu_AddSpells_Creative_Special.show()
  
 
@@ -485,7 +485,7 @@ EndFunction
 ;----------------------------------------------------------------------------------------------
 ;ADD CREATIVE UTILITIES SPELLS
 ;---------------------------------------------------------------------------------------------
-Function ManualMenu_AddSpells_Utilities(int aiButton = 0)
+Function ManualMenu_AddSpells_Utilities(Int aiButton = 0)
       aiButton =  ManualMenu_AddSpells_Utilities.show()
  
 
@@ -508,7 +508,7 @@ EndFunction
 ;----------------------------------------------------------------------------------------------
 ;REMOVE CREATIVE UTILITIES SPELLS
 ;---------------------------------------------------------------------------------------------
-Function ManualMenu_RemoveSpells_Utilities(int aiButton = 0)
+Function ManualMenu_RemoveSpells_Utilities(Int aiButton = 0)
       aiButton =  ManualMenu_RemoveSpells_Utilities.show()
  
 
@@ -534,8 +534,8 @@ EndFunction
 Event OnPlayerLoadGame()
 
     ;  This script (self) inherently gets events from the actor within the Quest alias.
-    ; The ReferenceAlias script "behaves" as if your wrote "extends Actor".
-  utility.SetINIBool("bDisablePlayerCollision:Havok", false)
+    ; The ReferenceAlias script "behaves" as If your wrote "extends Actor".
+  utility.SetINIBool("bDisablePlayerCollision:Havok", False)
 
 EndEvent
 

@@ -44,7 +44,7 @@ EndEvent
 ;---------------------------------------------------------------------------------------------
 
 
-Function Menu(int aiButton = 0)
+Function Menu(Int aiButton = 0)
      aiButton = ManualMenu.show()
 
     If aiButton == 1
@@ -61,7 +61,7 @@ EndFunction
 ;ADD SPELLS MAIN MENU
 ;---------------------------------------------------------------------------------------------
 
-Function ManualMenu_AddSpells(int aiButton = 0) ;Add All Spells
+Function ManualMenu_AddSpells(Int aiButton = 0) ;Add All Spells
       aiButton =  ManualMenu_AddSpells.show()
 
 
@@ -118,7 +118,7 @@ EndFunction
 ;REMOVE SPELLS MAIN MENU
 ;---------------------------------------------------------------------------------------------
 
-Function ManualMenu_RemoveSpells(int aiButton = 0)
+Function ManualMenu_RemoveSpells(Int aiButton = 0)
       aiButton =  ManualMenu_RemoveSpells.show()
 
 
@@ -202,7 +202,7 @@ EndFunction
 ;REMOVE FAST CRAFT SPELLS MAIN MENU 
 ;---------------------------------------------------------------------------------------------
 
-Function ManualMenu_RemoveSpells_FastCraft(int aiButton = 0)
+Function ManualMenu_RemoveSpells_FastCraft(Int aiButton = 0)
       aiButton =  ManualMenu_RemoveSpells_FastCraft.show()
 
     If aiButton == 1
@@ -262,14 +262,14 @@ Function ManualMenu_RemoveSpells_FastCraft(int aiButton = 0)
    ElseIf aiButton == 7 
       ManualMenu_RemoveSpells_FastCraft_P2()
 
- Endif
+ EndIf
 EndFunction
 
 ;----------------------------------------------------------------------------------------------
 ;REMOVE FAST CRAFTING SPELLS - PAGE 2
 ;---------------------------------------------------------------------------------------------
 
-Function ManualMenu_RemoveSpells_FastCraft_P2(int aiButton = 0)
+Function ManualMenu_RemoveSpells_FastCraft_P2(Int aiButton = 0)
       aiButton =  ManualMenu_RemoveSpells_FastCraft_P2.show()
  
 
@@ -306,7 +306,7 @@ EndFunction
 ;----------------------------------------------------------------------------------------------
 ;REMOVE CREATIVE SPECIAL SPELLS
 ;---------------------------------------------------------------------------------------------
-Function ManualMenu_RemoveSpells_Creative_Special(int aiButton = 0)
+Function ManualMenu_RemoveSpells_Creative_Special(Int aiButton = 0)
       aiButton =  ManualMenu_RemoveSpells_Creative_Special.show()
  
 
@@ -331,7 +331,7 @@ EndFunction
 ;---------------------------------------------------------------------------------------------
 
 
-Function ManualMenu_AddSpells_FastCraft(int aiButton = 0)
+Function ManualMenu_AddSpells_FastCraft(Int aiButton = 0)
       aiButton =  ManualMenu_AddSpells_FastCraft.show()
 
 
@@ -382,7 +382,7 @@ EndFunction
 ;ADD FAST CRAFTING SPELLS - PAGE 2
 ;---------------------------------------------------------------------------------------------
 
-Function ManualMenu_AddSpells_FastCraft_P2(int aiButton = 0)
+Function ManualMenu_AddSpells_FastCraft_P2(Int aiButton = 0)
       aiButton =  ManualMenu_AddSpells_FastCraft_P2.show()
 
  
@@ -415,7 +415,7 @@ EndFunction
 ;----------------------------------------------------------------------------------------------
 ;ADD CREATIVE SPECIAL SPELLS
 ;---------------------------------------------------------------------------------------------
-Function ManualMenu_AddSpells_Creative_Special(int aiButton = 0)
+Function ManualMenu_AddSpells_Creative_Special(Int aiButton = 0)
       aiButton =  ManualMenu_AddSpells_Creative_Special.show()
  
 
@@ -438,7 +438,7 @@ EndFunction
 ;----------------------------------------------------------------------------------------------
 ;ADD CREATIVE UTILITIES SPELLS
 ;---------------------------------------------------------------------------------------------
-Function ManualMenu_AddSpells_Utilities(int aiButton = 0)
+Function ManualMenu_AddSpells_Utilities(Int aiButton = 0)
       aiButton =  ManualMenu_AddSpells_Utilities.show()
  
 
@@ -461,7 +461,7 @@ EndFunction
 ;----------------------------------------------------------------------------------------------
 ;REMOVE CREATIVE UTILITIES SPELLS
 ;---------------------------------------------------------------------------------------------
-Function ManualMenu_RemoveSpells_Utilities(int aiButton = 0)
+Function ManualMenu_RemoveSpells_Utilities(Int aiButton = 0)
       aiButton =  ManualMenu_RemoveSpells_Utilities.show()
  
 

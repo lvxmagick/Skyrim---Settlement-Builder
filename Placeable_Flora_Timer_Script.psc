@@ -6,7 +6,7 @@ import debug
 
 
 Flora Property Plant01 Auto
-int Property iResetHours = 72 Auto
+Int Property iResetHours = 72 Auto
 
 Event OnActivate(ObjectReference akActionRef)
 RegisterForSingleUpdateGameTime(iResetHours)

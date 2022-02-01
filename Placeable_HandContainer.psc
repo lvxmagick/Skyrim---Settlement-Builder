@@ -7,7 +7,7 @@ Actor Property PlayerRef Auto
 
 
 Event OnEquipped(Actor akActor)
-  if akActor == Game.GetPlayer()
+  If akActor == Game.GetPlayer()
   My_InventoryContainer_Message.Show()
    Utility.Wait(0.1)
    Cast() 
@@ -23,6 +23,6 @@ EndEvent
 
 Function Cast()
 Handheld_Container_Spell.Cast(PlayerRef)
-Endfunction
+EndFunction
 
 

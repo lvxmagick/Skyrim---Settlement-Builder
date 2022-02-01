@@ -58,7 +58,7 @@ Function MainPositionMenu()
         Debug.ToggleAi()
         PositionObject = none 
         Self.Delete()
-    Endif
+    EndIf
             
 EndFunction
     
@@ -124,7 +124,7 @@ Function MoveMenu()
 
         Utility.Wait(0.2)
         MoveMenu() 
-    Endif
+    EndIf
 EndFunction
 
 Function RotateMenu()
@@ -193,7 +193,7 @@ Function RotateMenu()
         PositionObject.SetAngle(0, 0, 0)
         Utility.Wait(0.2)
         RotateMenu()
-    Endif
+    EndIf
 EndFunction
 
 Function ScaleMenu() 
@@ -228,5 +228,5 @@ Function ScaleMenu()
         PositionObject.SetScale(1.0)
         Utility.Wait(0.2)
         ScaleMenu() 
-    Endif
+    EndIf
 EndFunction

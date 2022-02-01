@@ -25,7 +25,7 @@ EndEvent
 ;---------------------------------------------------------------------------------------------
 
 
-Function Menu(int aiButton = 0)
+Function Menu(Int aiButton = 0)
      aiButton = Placeable_ManualMenu_CreativeMode_Catalogue.show()
 
     If aiButton == 1

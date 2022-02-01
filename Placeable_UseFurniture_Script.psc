@@ -18,20 +18,20 @@ Event OnActivate(ObjectReference akActionRef)
 Menu()
 EndEvent
 
-Function Menu(int aiButton = 0)
+Function Menu(Int aiButton = 0)
       aiButton = Menu_Use.show()
 
 If aiButton == 0                         ; Use
  
-	self.BlockActivation(false)
-	self.Activate(Game.GetPlayer())	
+    self.BlockActivation(False)
+    self.Activate(Game.GetPlayer())    
 
  
       ElseIf aiButton == 1        ;Position
       MenuUi()
     
     ElseIf aiButton == 2         ;Pickup
-        self.Disable(true)
+        self.Disable(True)
        game.getPlayer().addItem(MiscObj)
         DeleteWhenAble()
         Delete()
@@ -46,7 +46,7 @@ EndFunction
 
 
 
-Function MenuUi(int aiButton = 0)
+Function MenuUi(Int aiButton = 0)
       aiButton = MenuUi.show()
 
     If aiButton == 1
@@ -56,7 +56,7 @@ Function MenuUi(int aiButton = 0)
     ElseIf aiButton == 3
         X_Menu()
     ElseIf aiButton == 4   
-       self.Disable(true)
+       self.Disable(True)
        game.getPlayer().addItem(MiscObj)
        DeleteWhenAble()
         Delete()
@@ -66,7 +66,7 @@ Function MenuUi(int aiButton = 0)
 EndFunction
 
 
-Function Z_Menu(int aiButton = 0)
+Function Z_Menu(Int aiButton = 0)
       aiButton =  Z_Ui.show()
 
     If aiButton == 1
@@ -91,7 +91,7 @@ Function Z_Menu(int aiButton = 0)
 
 EndFunction
 
-Function Y_Menu(int aiButton = 0)
+Function Y_Menu(Int aiButton = 0)
       aiButton =  Y_Ui.show()
 
     If aiButton == 1
@@ -118,7 +118,7 @@ Function Y_Menu(int aiButton = 0)
 
 EndFunction
 
-Function X_Menu(int aiButton = 0)
+Function X_Menu(Int aiButton = 0)
       aiButton = X_Ui.show()
 
     If aiButton == 1
